@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -38,6 +41,7 @@ const LoginForm = () => {
         // Save the authentication token to localStorage
         localStorage.setItem('authToken', data.token);
         // You might want to perform further actions like redirecting the user or updating the UI
+        navigate('/chat'); // Use navigate
       } else {
         console.log('Authentication failed');
         // Handle authentication failure, display an error message, etc.
