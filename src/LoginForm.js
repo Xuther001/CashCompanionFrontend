@@ -35,6 +35,8 @@ const LoginForm = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Authentication successful:', data);
+        // Save the authentication token to localStorage
+        localStorage.setItem('authToken', data.token);
         // You might want to perform further actions like redirecting the user or updating the UI
       } else {
         console.log('Authentication failed');
