@@ -1,61 +1,80 @@
-/* ChatComponent.css */
+/* Styling for chat container */
 .chat-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+/* Styling for chat box */
 .chat-box {
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #f0f0f0;
   padding: 10px;
-  width: 300px;
-  max-height: 200px; /* Adjust this value to control the vertical length */
+  border-radius: 5px;
   overflow-y: auto;
-  text-align: center;
+  max-height: 300px;
 }
 
+/* Styling for individual messages */
 .message {
-  margin-bottom: 5px;
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.sender {
-  font-weight: bold;
+/* Styling for message content */
+.message .content {
+  font-size: 14px;
 }
 
+/* Styling for receiver's username */
+.message .receiver-username {
+  color: #777;
+  font-size: 12px;
+}
+
+/* Styling for input container */
 .input-container {
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Styling for input fields */
+.receiver-input,
+.message-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Styling for send button */
+.send-button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Styling for chat container */
+.chat-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh; /* Set minimum viewport height */
+  padding: 20px;
+  background-color: #f5f5f5;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 15px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, transform 0.2s;
-}
-
-button:hover {
+/* Hover effect for send button */
+.send-button:hover {
   background-color: #0056b3;
-}
-
-button:focus {
-  outline: none;
-  background-color: #0056b3;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
-  transform: scale(1.05);
 }

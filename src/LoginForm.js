@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './LoginForm.css';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -41,6 +42,7 @@ const LoginForm = () => {
         // Save the authentication token to localStorage
         localStorage.setItem('authToken', data.token);
         // You might want to perform further actions like redirecting the user or updating the UI
+        localStorage.setItem('username', username); // Saving username
         navigate('/chat'); // Use navigate
       } else {
         console.log('Authentication failed');
@@ -53,28 +55,30 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
+    <div className="login-container">
+      <h2 className="login-container__heading">Login</h2>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <div className="login-form__group">
+          <label htmlFor="username" className="login-form__label">Username:</label>
           <input
             type="text"
             id="username"
             value={username}
             onChange={handleUsernameChange}
+            className="login-form__input"
           />
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
+        <div className="login-form__group">
+          <label htmlFor="password" className="login-form__label">Password:</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={handlePasswordChange}
+            className="login-form__input"
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="login-form__button">Login</button>
       </form>
     </div>
   );
