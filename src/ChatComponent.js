@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { w3cwebsocket as WebSocket } from 'websocket';
 import './ChatComponent.css';
 import SlidingStockPriceComponent from './SlidingStockPriceComponent';
@@ -7,6 +7,7 @@ import NewsComponent from './NewsComponent';
 
 const ChatComponent = ({ token }) => {
 
+  const chatBoxRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [ws, setWs] = useState(null);
   const [inputMessage, setInputMessage] = useState('');
@@ -50,12 +51,22 @@ const ChatComponent = ({ token }) => {
     } else {
       console.log('WebSocket is not open or missing input.');
     }
+
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
   };
+
+  useEffect(() => {
+  if (chatBoxRef.current) {
+    chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+  }
+  }, [messages]);
 
   return (
     <div className="chat-container">
       <SlidingStockPriceComponent />
-      <div className="chat-box" style={{ height: '800px', width: '620px' }}>
+      <div className="chat-box" style={{ height: '800px', width: '620px' }} ref={chatBoxRef}>
         {messages.map((message, index) => (
           <div key={index} className="message">
             {/* <span className="receiver-username">{message.receiverUsername}</span> */}
