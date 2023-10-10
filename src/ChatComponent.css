@@ -78,3 +78,23 @@
 .send-button:hover {
   background-color: #0056b3;
 }
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%; /* Adjust as needed */
+}
+
+.marquee p {
+  display: inline-block;
+  animation: marquee 10s linear infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

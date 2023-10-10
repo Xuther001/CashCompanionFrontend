@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { w3cwebsocket as WebSocket } from 'websocket';
 import './ChatComponent.css';
+import SlidingStockPriceComponent from './SlidingStockPriceComponent';
 
 const ChatComponent = ({ token }) => {
 
@@ -51,6 +52,7 @@ const ChatComponent = ({ token }) => {
 
   return (
     <div className="chat-container">
+      <SlidingStockPriceComponent />
       <div className="chat-box">
         {messages.map((message, index) => (
           <div key={index} className="message">

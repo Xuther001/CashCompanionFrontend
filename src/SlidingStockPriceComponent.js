@@ -9,8 +9,8 @@ function SlidingStockPriceComponent() {
 
   useEffect(() => {
     // Define the API endpoint URLs
-    const aaplQuoteUrl = 'https://finnhub.io/api/v1/quote?symbol=aapl&token=sandbox_c683tuqad3iagio36ujg';
-    const msftQuoteUrl = 'https://finnhub.io/api/v1/quote?symbol=msft&token=sandbox_c683tuqad3iagio36ujg';
+    const aaplQuoteUrl = 'https://finnhub.io/api/v1/quote?symbol=aapl&token=ckifd3hr01qi7b5gm7dgckifd3hr01qi7b5gm7e0';
+    const msftQuoteUrl = 'https://finnhub.io/api/v1/quote?symbol=msft&token=ckifd3hr01qi7b5gm7dgckifd3hr01qi7b5gm7e0';
 
     // Fetch AAPL (Apple Inc.) quote data
     axios
@@ -37,29 +37,28 @@ function SlidingStockPriceComponent() {
 
   return (
     <div>
-      <h1>Stock Quotes</h1>
-      {loading ? (
-        <p>Loading data...</p>
-      ) : (
-        <div>
-          <h2>AAPL Quote</h2>
+      <marquee behavior="scroll" direction="left">
+        <h1>Stock Quotes</h1>
+        {loading ? (
+          <p>Loading data...</p>
+        ) : (
           <p>
-            Symbol: {aaplQuote.symbol}<br />
-            Last Price: {aaplQuote.c}<br />
-            High: {aaplQuote.h}<br />
-            Low: {aaplQuote.l}<br />
-            Previous Close: {aaplQuote.pc}<br />
+            <strong>Apple's Quote:</strong> 
+            Symbol: AAPL | 
+            Last Price: {aaplQuote.c} | 
+            High: {aaplQuote.h} | 
+            Low: {aaplQuote.l} | 
+            Previous Close: {aaplQuote.pc} | 
+
+            <strong>Microsoft's Quote:</strong> 
+            Symbol: MSFT | 
+            Last Price: {msftQuote.c} | 
+            High: {msftQuote.h} | 
+            Low: {msftQuote.l} | 
+            Previous Close: {msftQuote.pc}
           </p>
-          <h2>MSFT Quote</h2>
-          <p>
-            Symbol: {msftQuote.symbol}<br />
-            Last Price: {msftQuote.c}<br />
-            High: {msftQuote.h}<br />
-            Low: {msftQuote.l}<br />
-            Previous Close: {msftQuote.pc}<br />
-          </p>
-        </div>
-      )}
+        )}
+      </marquee>
     </div>
   );
 }
