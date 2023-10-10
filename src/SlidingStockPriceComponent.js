@@ -38,7 +38,6 @@ function SlidingStockPriceComponent() {
   return (
     <div>
       <marquee behavior="scroll" direction="left">
-        <h1>Stock Quotes</h1>
         {loading ? (
           <p>Loading data...</p>
         ) : (

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { w3cwebsocket as WebSocket } from 'websocket';
 import './ChatComponent.css';
 import SlidingStockPriceComponent from './SlidingStockPriceComponent';
+import NoteFormComponent from './NoteFormComponent';
+import NewsComponent from './NewsComponent';
 
 const ChatComponent = ({ token }) => {
 
@@ -53,11 +55,11 @@ const ChatComponent = ({ token }) => {
   return (
     <div className="chat-container">
       <SlidingStockPriceComponent />
-      <div className="chat-box">
+      <div className="chat-box" style={{ height: '800px', width: '620px' }}>
         {messages.map((message, index) => (
           <div key={index} className="message">
+            {/* <span className="receiver-username">{message.receiverUsername}</span> */}
             <span className="content">{message.content}</span>
-            <span className="receiver-username">{message.receiverUsername}</span>
           </div>
         ))}
       </div>
@@ -78,6 +80,8 @@ const ChatComponent = ({ token }) => {
         />
         <button className="send-button" onClick={sendMessage}>Send</button>
       </div>
+      <NoteFormComponent />
+      <NewsComponent />
     </div>
   );
 };
