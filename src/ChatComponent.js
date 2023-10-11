@@ -5,6 +5,7 @@ import SlidingStockPriceComponent from './SlidingStockPriceComponent';
 import NoteFormComponent from './NoteFormComponent';
 import NewsComponent from './NewsComponent';
 import PortfolioComponent from './PortfolioComponent';
+import ChatGPTComponent from './ChatGPTComponent';
 
 const ChatComponent = ({ token }) => {
 
@@ -95,6 +96,7 @@ const ChatComponent = ({ token }) => {
       <PortfolioComponent />
       <NoteFormComponent />
       <NewsComponent />
+      <ChatGPTComponent />
     </div>
   );
 };
