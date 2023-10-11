@@ -4,6 +4,7 @@ import './ChatComponent.css';
 import SlidingStockPriceComponent from './SlidingStockPriceComponent';
 import NoteFormComponent from './NoteFormComponent';
 import NewsComponent from './NewsComponent';
+import PortfolioComponent from './PortfolioComponent';
 
 const ChatComponent = ({ token }) => {
 
@@ -91,6 +92,7 @@ const ChatComponent = ({ token }) => {
         />
         <button className="send-button" onClick={sendMessage}>Send</button>
       </div>
+      <PortfolioComponent />
       <NoteFormComponent />
       <NewsComponent />
     </div>

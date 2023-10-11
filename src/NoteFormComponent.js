@@ -20,8 +20,7 @@ function NoteFormComponent() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="content">Content:</label>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <textarea
             id="content"
             name="content"
@@ -29,10 +28,12 @@ function NoteFormComponent() {
             onChange={(e) => setContent(e.target.value)}
             required
             placeholder="Add a Note"
-            style={{ width: '630px', height: '40px', resize: 'none' }} // Set the height using inline style
-          ></textarea>
+            style={{ width: '630px', height: '40px', resize: 'none' }}
+          />
+          <button type="submit" style={{ marginLeft: '10px' }}>
+            Save Note
+          </button>
         </div>
-        <button type="submit">Save Note</button>
       </form>
     </div>
   );

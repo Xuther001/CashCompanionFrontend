@@ -45,6 +45,7 @@ function NewsComponent() {
           name="symbols"
           value={symbols}
           onChange={handleSymbolsChange}
+          required //this is not working right now for some reason
         />
         <button onClick={fetchNewsData}>Fetch News</button>
       </div>
