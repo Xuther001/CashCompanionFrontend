@@ -58,19 +58,20 @@ function PortfolioComponent() {
           value={newInvestment.purchasePrice}
           onChange={handleInputChange}
         />
-        <label htmlFor="currentPrice">Current Price:</label>
+        {/* Maybe net gain will be added later */}
+        {/* <label htmlFor="currentPrice">Current Price:</label>
         <input
           type="number"
           name="currentPrice"
           value={newInvestment.currentPrice}
           onChange={handleInputChange}
-        />
+        /> */}
         <div style={{ textAlign: 'center' }}>
           <button style={{ marginTop: '10px' }} onClick={addInvestment}>Add Investment</button>
         </div>
       </div>
       <div>
-        <h3>Your Investments</h3>
+        <h3>Your Investments:</h3>
         {investmentList}
       </div>
     </div>
