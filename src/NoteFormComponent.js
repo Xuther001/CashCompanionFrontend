@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './NoteFormComponent.css';
 
 function NoteFormComponent() {
   const [content, setContent] = useState('');
   const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    handleGetAllNotes();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,8 +18,6 @@ function NoteFormComponent() {
       console.log('Note added successfully:', response.data);
 
       setContent('');
-      
-      // After adding a note, fetch and display all notes
       handleGetAllNotes();
     } catch (error) {
       console.error('Error adding note:', error);
@@ -25,14 +28,14 @@ function NoteFormComponent() {
     try {
       const response = await axios.get('http://localhost:8080/api/v1/notes');
       console.log('All notes:', response.data);
-      setNotes(response.data); // Update the notes state
+      setNotes(response.data);
     } catch (error) {
       console.error('Error retrieving notes:', error);
     }
   };
 
   return (
-    <div>
+    <div className="note-container">
       <form onSubmit={handleSubmit}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <textarea
@@ -50,7 +53,7 @@ function NoteFormComponent() {
         </div>
       </form>
 
-      <div>
+      <div className="notes-wrapper">
         <h2>My Notes:</h2>
         <ul>
           {notes.map((note) => (

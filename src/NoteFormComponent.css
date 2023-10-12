@@ -1,0 +1,15 @@
+.note-container {
+    width: 800px;
+    height: 400px;
+    /*padding: 20px; /* Add some padding for spacing */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }
+  
+  .notes-wrapper {
+    max-height: 300px; /* Limit the maximum height of the investment list */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+    margin-top: 20px;
+  }

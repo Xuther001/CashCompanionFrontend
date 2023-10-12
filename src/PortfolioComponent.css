@@ -1,0 +1,32 @@
+.portfolio-container {
+    width: 800px;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden; /* Prevent overflowing content */
+  }
+  
+  .add-investment-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .add-investment-label {
+    margin-right: 10px;
+  }
+  
+  .add-investment-input {
+    margin-bottom: 10px;
+  }
+  
+  .add-investment-button {
+    margin-top: 10px;
+  }
+  
+  .investment-list-container {
+    max-height: 200px; /* Limit the maximum height of the investment list */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+    margin-top: 20px;
+  }

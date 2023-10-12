@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './ChatComponent.css';
+import './NewsComponent.css';
 
 function NewsComponent() {
   const [symbols, setSymbols] = useState('');
@@ -36,33 +36,30 @@ function NewsComponent() {
   };
 
   return (
-    <div>
+    <div className="news-container">
       <h2>Financial News</h2>
-      <div>
-        <label htmlFor="symbols">Enter Symbols (e.g., TSLA,AMZN,MSFT):</label>
+      <div className="news-fetch-news">
+        <label htmlFor="symbols">Enter Symbols (e.g., TSLA, AMZN, MSFT):</label>
         <input
           type="text"
           id="symbols"
           name="symbols"
           value={symbols}
           onChange={handleSymbolsChange}
-          required //this is not working right now for some reason
+          required
         />
         <button onClick={fetchNewsData}>Fetch News</button>
       </div>
       {loading ? (
         <p>Loading news data...</p>
       ) : (
-        <div>
-        {/* <h3>News That Might Affect {symbols}'s Price:</h3> */}
-        <div className="limited-width-container">
-          <ul className="limited-height-list">
+        <div className="news-list-container">
+          <ul className="news-list">
             {newsData.map((newsItem, index) => (
               <li key={index}>{newsItem.title}</li>
             ))}
           </ul>
         </div>
-      </div>
       )}
     </div>
   );

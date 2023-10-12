@@ -1,23 +1,26 @@
-.message-container {
+/* Your CSS file (e.g., FirebaseChatComponent.css) */
+.FirebaseComponent {
     width: 800px;
     height: 400px;
-    overflow-y: auto;
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 20px;
+    margin: 20px;
+    overflow: hidden; /* Prevent overflowing content */
   }
 
-.message {
-display: flex;
-align-items: center;
-margin-bottom: 10px;
-}
-
-.message img {
-width: 40px; /* Adjust the width as needed */
-height: auto; /* Maintain aspect ratio */
-margin-right: 10px; /* Adds spacing between image and text */
-}
-
-.message p {
-margin: 0;
-}
+  .logged-in-info {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Customize the color as needed */
+  }
+  
+  .message-container {
+    max-height: 350px; /* Adjust the maximum height for the message container */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+  }
+  
+  .user-photo {
+    max-width: 30px; /* Set the maximum width */
+    max-height: 30px; /* Set the maximum height */
+    margin-right: 10px; /* Add some margin for spacing */
+  }
