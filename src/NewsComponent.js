@@ -46,7 +46,7 @@ function NewsComponent() {
           name="symbols"
           value={symbols}
           onChange={handleSymbolsChange}
-          required //this is not working right now for some
+          required //this is not working right now for some reason
         />
         <button onClick={fetchNewsData}>Fetch News</button>
       </div>
@@ -54,7 +54,7 @@ function NewsComponent() {
         <p>Loading news data...</p>
       ) : (
         <div>
-        <h3>News That Might Affect {symbols}'s Price:</h3>
+        {/* <h3>News That Might Affect {symbols}'s Price:</h3> */}
         <div className="limited-width-container">
           <ul className="limited-height-list">
             {newsData.map((newsItem, index) => (
