@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
 import { doc, setDoc, getFirestore, getDoc, onSnapshot, collection, addDoc, orderBy, query, serverTimestamp} from 'firebase/firestore';
 import { auth, app } from './firebase';
+
+import './FirebaseChatComponent.css';
 
 const db = getFirestore(app);
 
@@ -12,6 +14,7 @@ function FirebaseComponent() {
     const [user, setUser] = useState(null)
     const [messages, setMessages] = useState([])
     const [newMessage, setNewMessage] = useState("")
+    const chatContainerRef = useRef(null)
 
     useEffect(() => {
         const q = query(collection(db, "messages"), orderBy("timestamp"))
@@ -33,6 +36,12 @@ function FirebaseComponent() {
             }
         })
     }, [])
+
+    useEffect(() => {
+        if (chatContainerRef.current) {
+          chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+      }, [messages]); // Scroll to the bottom whenever messages change
 
     const sendMessage = async () => {
         await addDoc(collection(db, "messages"), {
@@ -71,14 +80,14 @@ const handleGoogleLogin = async () => {
                 <button onClick={sendMessage}>Send Message</button>
                 <button onClick={() => auth.signOut()}>Logout</button>
 
-                {messages.map(msg => (
-                    <div key={msg.id}>
-                        <img
-                            src={msg.data.photoURL}
-                        />
-                        {msg.data.text}
-                    </div>
-                ))}
+                <div ref={chatContainerRef} className="message-container">
+                    {messages.map(msg => (
+                        <div key={msg.id} className="message">
+                            <img src={msg.data.photoURL}/>
+                            {msg.data.text}
+                        </div>
+                    ))}
+                </div>
                 </>
             ):
         <button onClick={handleGoogleLogin}>Login with google</button>

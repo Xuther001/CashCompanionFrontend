@@ -1,0 +1,23 @@
+.message-container {
+    width: 800px;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+.message {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.message img {
+width: 40px; /* Adjust the width as needed */
+height: auto; /* Maintain aspect ratio */
+margin-right: 10px; /* Adds spacing between image and text */
+}
+
+.message p {
+margin: 0;
+}
