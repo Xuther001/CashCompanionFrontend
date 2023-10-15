@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import '../index';
 import AppRoutes from './AppRoutes'; // Import the AppRoutes component
 
 const App = () => {
