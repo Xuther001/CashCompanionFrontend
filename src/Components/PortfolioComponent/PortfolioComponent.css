@@ -5,12 +5,15 @@
     padding: 20px;
     margin: 20px;
     overflow: hidden; /* Prevent overflowing content */
+    background-color: skyblue;
   }
   
   .add-investment-container {
     border: 1px solid #ccc;
+    width: 760px;
     padding: 10px;
     margin: 10px;
+    background-color: lightblue;
   }
   
   .add-investment-label {
@@ -26,7 +29,12 @@
   }
   
   .investment-list-container {
-    max-height: 200px; /* Limit the maximum height of the investment list */
+    border: 1px solid #ccc;
+    width: 760px;
+    padding: 10px;
+    max-height: 160px; /* Limit the maximum height of the investment list */
     overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
     margin-top: 20px;
+    margin: 10px;
+    background-color: lightblue;
   }

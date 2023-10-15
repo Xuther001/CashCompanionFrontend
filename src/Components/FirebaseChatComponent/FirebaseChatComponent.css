@@ -1,17 +1,21 @@
 /* Your CSS file (e.g., FirebaseChatComponent.css) */
+
+/* Firebase chat box styling */
 .FirebaseComponent {
     width: 800px;
     height: 400px;
     border: 1px solid #ccc;
     padding: 20px;
     margin: 20px;
+    background-color: skyblue;
     overflow: hidden; /* Prevent overflowing content */
   }
 
+  /* Logged in as, Send Message, Logout container */
   .logged-in-info {
     font-weight: bold;
     margin-bottom: 10px;
-    color: #333; /* Customize the color as needed */
+    color: #333;
   }
   
   .message-container {
@@ -19,8 +23,18 @@
     overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
   }
   
+  /* Google Account Icon */
   .user-photo {
-    max-width: 30px; /* Set the maximum width */
-    max-height: 30px; /* Set the maximum height */
-    margin-right: 10px; /* Add some margin for spacing */
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 10px;
+  }
+
+  /* Styling for individual messages */
+  .message {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: lightblue;
+    border: 1px solid #ddd;
+    border-radius: 5px;
   }

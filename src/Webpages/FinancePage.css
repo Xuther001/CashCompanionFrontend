@@ -5,24 +5,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-}
-
-/* Styling for chat box */
-.chat-box {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 5px;
-  overflow-y: auto;
-  max-height: 300px;
-}
-
-/* Styling for individual messages */
-.message {
-  margin: 10px 0;
-  padding: 8px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  background-color: lightblue; 
 }
 
 /* Styling for message content */
@@ -71,7 +54,7 @@
   align-items: center; /* Center horizontally */
   min-height: 100vh; /* Set minimum viewport height */
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: rgb(203, 221, 227);
 }
 
 /* Hover effect for send button */

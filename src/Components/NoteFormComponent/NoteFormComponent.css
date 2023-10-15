@@ -6,10 +6,16 @@
     padding: 20px;
     margin: 20px;
     overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    background-color: skyblue;
   }
   
   .notes-wrapper {
+    border: 1px solid #ccc;
+    width: 760px;
+    padding: 10px;
     max-height: 300px; /* Limit the maximum height of the investment list */
     overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
     margin-top: 20px;
+    margin: 10px;
+    background-color: lightblue;
   }
