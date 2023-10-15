@@ -27,7 +27,7 @@ const LoginForm = () => {
   
     try {
       // Send the credentials to the backend for authentication
-      const response = await fetch('http://localhost:8080/api/v1/auth/authenticate', {
+      const response = await fetch('http://54.186.107.21:8080/api/v1/auth/authenticate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

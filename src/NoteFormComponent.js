@@ -14,7 +14,7 @@ function NoteFormComponent() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/notes', { content });
+      const response = await axios.post('http://54.186.107.21:8080/api/v1/notes', { content });
       console.log('Note added successfully:', response.data);
 
       setContent('');
@@ -26,7 +26,7 @@ function NoteFormComponent() {
 
   const handleGetAllNotes = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/v1/notes');
+      const response = await axios.get('http://54.186.107.21:8080/api/v1/notes');
       console.log('All notes:', response.data);
       setNotes(response.data);
     } catch (error) {
