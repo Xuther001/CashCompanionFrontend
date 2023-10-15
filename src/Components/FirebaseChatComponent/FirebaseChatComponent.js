@@ -67,7 +67,11 @@ function FirebaseComponent() {
         <>
           <div className="logged-in-info">
             <div>Logged in as {user.displayName}</div>
-            <input value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
+            <input
+              style={{ width: '97%', padding: '10px' }}
+              value={newMessage}
+              onChange={(e) => setNewMessage(e.target.value)}
+            />
             <button onClick={sendMessage}>Send Message</button>
             <button onClick={() => auth.signOut()}>Logout</button>
           </div>

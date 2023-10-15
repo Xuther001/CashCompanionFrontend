@@ -73,7 +73,7 @@ function ChatGPTComponent() {
   }
 
   return (
-    <div className="ChatGPTComponent">
+    <div>
       <div style={{ position:"relative", height: "400px", width: "600px"  }}>
         <MainContainer>
           <ChatContainer>       
