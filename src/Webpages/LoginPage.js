@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginForm.css';
+import './LoginPage.css';
 
-const LoginForm = () => {
+const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,7 +27,7 @@ const LoginForm = () => {
   
     try {
       // Send the credentials to the backend for authentication
-      const response = await fetch('http://34.216.224.167:8080/api/v1/auth/authenticate', {
+      const response = await fetch('http://localhost:8080/api/v1/auth/authenticate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,4 +88,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginPage;

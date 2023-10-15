@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
 import { doc, setDoc, getFirestore, getDoc, onSnapshot, collection, addDoc, orderBy, query, serverTimestamp } from 'firebase/firestore';
 import { auth, app } from './firebase';
-import './FirebaseChatComponent.css';
+import './FirebaseChatComponent.css'
 
 const db = getFirestore(app);
 
