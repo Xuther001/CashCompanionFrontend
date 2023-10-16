@@ -9,7 +9,7 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/chat" element={<FinancePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<NotFound />} /> {/* 404 page */}

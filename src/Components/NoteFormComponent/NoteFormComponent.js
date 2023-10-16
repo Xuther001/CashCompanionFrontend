@@ -4,9 +4,17 @@ import './NoteFormComponent.css';
 
 function NoteFormComponent() {
   const [content, setContent] = useState('');
+  const [userid, setUserId] = useState(null);
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
+    // Retrieve the userId from local storage
+    const storedUserId = localStorage.getItem('username');
+    if (storedUserId) {
+      setUserId(storedUserId);
+    }
+
+    // Load existing notes
     handleGetAllNotes();
   }, []);
 
@@ -14,7 +22,7 @@ function NoteFormComponent() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/notes', { content });
+      const response = await axios.post('http://35.91.130.145:8080/api/v1/notes', { content, userid });
       console.log('Note added successfully:', response.data);
 
       setContent('');
@@ -26,7 +34,10 @@ function NoteFormComponent() {
 
   const handleGetAllNotes = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/v1/notes');
+      // Include the 'userid' in the URL to retrieve notes for a specific user
+      // const response = await axios.get(`http://localhost:8080/api/v1/notes/user/${userid}`);
+      const response = await axios.get(`http://35.91.130.145:8080/api/v1/notes/user/${userid}`);
+      // const response = await axios.get(`http://localhost:8080/api/v1/notes`);
       console.log('All notes:', response.data);
       setNotes(response.data);
     } catch (error) {
