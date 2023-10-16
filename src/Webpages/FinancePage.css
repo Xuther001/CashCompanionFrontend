@@ -54,7 +54,12 @@
   align-items: center; /* Center horizontally */
   min-height: 100vh; /* Set minimum viewport height */
   padding: 20px;
-  background-color: rgb(203, 221, 227);
+  /* background-color: lightblue; */
+  background-image: url('ChatContainerImage.jpg'); /* Replace 'ChatContainerImage.jpg' with your image file path */
+  background-size: auto; /* Keep the original image size */
+  background-repeat: repeat; /* Repeat the image */
+  background-position: center center; /* Center the image horizontally and vertically */
+  background-color: lightblue; /* Fallback background color */
 }
 
 /* Hover effect for send button */

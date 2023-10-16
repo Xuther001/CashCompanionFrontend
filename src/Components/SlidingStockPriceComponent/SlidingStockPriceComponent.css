@@ -1,0 +1,9 @@
+.sliding-container {
+    background-color: white;
+    order: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    height: 50px;
+    width: 823px;
+    margin: 0 auto;
+  }

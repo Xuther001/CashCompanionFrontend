@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './SlidingStockPriceComponent.css'
 
 function SlidingStockPriceComponent() {
   // State variables to store fetched data
@@ -36,7 +37,7 @@ function SlidingStockPriceComponent() {
   }, []);
 
   return (
-    <div>
+    <div className="sliding-container">
       <marquee behavior="scroll" direction="left">
         {loading ? (
           <p>Loading data...</p>

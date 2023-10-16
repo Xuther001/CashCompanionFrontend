@@ -1,12 +1,10 @@
-/* LoginForm.css */
-
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.login-container {
+.registration-container {
   max-width: 400px;
   margin: 50px auto 0;
   padding: 20px;
@@ -19,26 +17,26 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 600px;
 }
 
-.login-container__heading {
+.registration-container__heading {
   margin-bottom: 20px;
   font-size: 28px;
   color: #333333;
 }
 
-.login-form {
+.registration-form {
   max-width: 400px;
 }
 
-.login-form__label {
+.registration-form__label {
   margin-bottom: 10px;
   font-size: 16px;
   color: #555555;
 }
 
-.login-form__input {
+.registration-form__input {
   padding: 12px;
   margin-bottom: 20px;
   border: 1px solid #cccccc;
@@ -47,7 +45,7 @@ html, body {
   width: 100%;
 }
 
-.login-form__button {
+.registration-form__button {
   padding: 12px 20px;
   background-color: #007bff;
   color: #ffffff;
@@ -58,7 +56,7 @@ html, body {
   transition: background-color 0.2s ease-in-out;
 }
 
-.login-form__button:hover {
+.registration-form__button:hover {
   background-color: #0056b3;
 }
 
@@ -68,6 +66,10 @@ html, body {
   margin-top: 5px;
 }
 
-.registration-button {
-  margin-top: 10px;
+.registration-success-message {
+    color: darkblue;
+  }
+  
+.registration-failed-message {
+    color: red;
 }
