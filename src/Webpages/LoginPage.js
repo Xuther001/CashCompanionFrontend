@@ -31,10 +31,6 @@ const LoginPage = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // 'Access-Control-Allow-Origin': '*',
-          // 'Access-Control-Allow-Credentials': true,
-          // "Access-Control-Allow-Headers" : "Content-Type",
-          // "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
         },
         body: JSON.stringify(credentials),
       });
@@ -82,7 +78,12 @@ const LoginPage = () => {
             className="login-form__input"
           />
         </div>
-        <button type="submit" className="login-form__button">Login</button>
+        <div className="button-group">
+          <button type="submit" className="login-form__button">Login</button>
+          <div className="registration-button">
+            <button type="button" className="login-form__button" onClick={() => navigate('/register')}>Register</button>
+          </div>
+        </div>
       </form>
     </div>
   );
