@@ -37,7 +37,7 @@ function NoteFormComponent() {
       // Include the 'userid' in the URL to retrieve notes for a specific user
       // const response = await axios.get(`http://localhost:8080/api/v1/notes/user/${userid}`);
       const response = await axios.get(`http://35.91.130.145:8080/api/v1/notes/user/${userid}`);
-      // const response = await axios.get(`http://localhost:8080/api/v1/notes`);
+      // const response = await axios.get(`http://localhost:8080/api/v1/notes`); a
       console.log('All notes:', response.data);
       setNotes(response.data);
     } catch (error) {
