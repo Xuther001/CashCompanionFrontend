@@ -1,3 +1,14 @@
+# CashCompanion
+
+CashCompanion seeks to provide a dynamic website where users can have live access to up-to-date stock quotes and financial news.
+It is also a place where users can message each other in real-time. Users can also track their investment porfolio and
+create notes for themselves. ChatGPT is also integrated to assist you for any inquiries you may have.
+
+- This repository is the frontend.
+- The backend can be found here: https://github.com/Xuther001/chat-app
+
+Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
