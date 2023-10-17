@@ -45,7 +45,7 @@ const RegistrationPage = () => {
 
     try {
       // Send the registration data to the backend for registration
-      const response = await fetch('http://35.91.130.145:8080/api/v1/auth/register', {
+      const response = await fetch('http://34.220.129.67:8080/api/v1/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

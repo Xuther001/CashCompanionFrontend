@@ -93,8 +93,8 @@
 }
 
 .limited-height-list {
-  max-height: 100px; /* Set the maximum height you desire */
-  overflow-y: auto; /* Add a vertical scrollbar when the content overflows */
+  max-height: 100px;
+  overflow-y: auto;
 }
 
 
