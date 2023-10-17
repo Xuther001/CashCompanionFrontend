@@ -27,7 +27,7 @@ const LoginPage = () => {
   
     try {
       // Send the credentials to the backend for authentication
-      const response = await fetch('http://34.220.129.67:8080/api/v1/auth/authenticate', {
+      const response = await fetch('http://localhost:8080/api/v1/auth/authenticate', {
       // const response = await fetch('http://35.91.130.145:8080/api/v1/auth/authenticate', {
         method: 'POST',
         headers: {

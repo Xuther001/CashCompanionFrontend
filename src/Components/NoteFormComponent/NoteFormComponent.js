@@ -22,7 +22,7 @@ function NoteFormComponent() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://34.220.129.67:8080/api/v1/notes', { content, userid });
+      const response = await axios.post('http://localhost:8080/api/v1/notes', { content, userid });
       console.log('Note added successfully:', response.data);
 
       setContent('');
@@ -33,7 +33,7 @@ function NoteFormComponent() {
 
   const handleRemoveNote = async (noteId) => {
     try {
-      await axios.delete(`http://34.220.129.67:8080/api/v1/notes/${noteId}`);
+      await axios.delete(`http://localhost:8080/api/v1/notes/${noteId}`);
       console.log('Note removed successfully:', noteId);
 
       handleGetAllNotes();
@@ -43,13 +43,13 @@ function NoteFormComponent() {
   };
 
   const handleGetAllNotes = async () => {
-     // Make an HTTP GET request to fetch notes by username
-     fetch(`http://34.220.129.67:8080/api/v1/notes/user/${userid}`)
-     .then(response => response.json())
-     .then(data => setNotes(data))
-     .catch(error => {
-         console.error('Error fetching notes:', error);
-     });
+    try {
+      const response = await axios.get(`http://localhost:8080/api/v1/notes`);
+      console.log('All notes:', response.data);
+      setNotes(response.data);
+    } catch (error) {
+      console.error('Error retrieving notes:', error);
+    }
   };
 
   return (
@@ -63,9 +63,9 @@ function NoteFormComponent() {
             onChange={(e) => setContent(e.target.value)}
             required
             placeholder="Add a Note"
-            style={{ width: '630px', height: '40px', resize: 'none' }}
+            style={{ marginLeft: '10px', width: '850px', height: '50px', resize: 'none' }}
           />
-          <button type="submit" style={{ marginLeft: '10px' }}>
+          <button type="submit" style={{ marginLeft: '10px'}}>
             Save Note
           </button>
         </div>
@@ -76,8 +76,8 @@ function NoteFormComponent() {
         <ul>
           {notes.map((note) => (
             <li key={note.id}>
-              <button onClick={() => handleRemoveNote(note.id)}>Remove</button>
-              {`Content: ${note.content}`}
+              <button style={{ marginRight: '10px'}} onClick={() => handleRemoveNote(note.id)}>Remove</button>
+              <span style={{ color: 'darkblue' }}>{`Content: ${note.content}`}</span>
             </li>
           ))}
         </ul>
