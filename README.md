@@ -5,7 +5,7 @@ It is also a place where users can message each other in real-time. Users can al
 create notes for themselves. ChatGPT is also integrated to assist you for any inquiries you may have.
 
 - This repository is the frontend.
-- The backend can be found here: https://github.com/Xuther001/chat-app
+- The backend can be found here: https://github.com/Xuther001/CashCompanionBackend
 
 Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek
 
