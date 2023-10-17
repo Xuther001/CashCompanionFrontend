@@ -69,7 +69,7 @@ const RegistrationPage = () => {
     }
 
     setTimeout(() => {
-        navigate('/');
+        navigate('/chat');
       }, 10000);
   };
 

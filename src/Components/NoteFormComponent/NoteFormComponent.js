@@ -31,10 +31,10 @@ function NoteFormComponent() {
     }
   };
 
-  const handleRemoveNote = async (noteId) => {
+  const handleRemoveNote = async (noteid) => {
     try {
-      await axios.delete(`http://localhost:8080/api/v1/notes/${noteId}`);
-      console.log('Note removed successfully:', noteId);
+      await axios.delete(`http://localhost:8080/api/v1/notes/${noteid}`);
+      console.log('Note removed successfully:', noteid);
 
       handleGetAllNotes();
     } catch (error) {
@@ -44,6 +44,7 @@ function NoteFormComponent() {
 
   const handleGetAllNotes = async () => {
     try {
+      // const response = await axios.get(`http://localhost:8080/api/v1/notes/${userid}`);
       const response = await axios.get(`http://localhost:8080/api/v1/notes`);
       console.log('All notes:', response.data);
       setNotes(response.data);
