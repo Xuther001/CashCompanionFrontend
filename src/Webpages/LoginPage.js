@@ -19,16 +19,13 @@ const LoginPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
   
-    // Create an object to hold the credentials
     const credentials = {
       username: username,
       password: password,
     };
   
     try {
-      // Send the credentials to the backend for authentication
       const response = await fetch('http://localhost:8080/api/v1/auth/authenticate', {
-      // const response = await fetch('http://35.91.130.145:8080/api/v1/auth/authenticate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,22 +33,18 @@ const LoginPage = () => {
         body: JSON.stringify(credentials),
       });
   
-      // Check if the response is successful
       if (response.ok) {
         const data = await response.json();
         console.log('Authentication successful:', data);
         // Save the authentication token to localStorage
         localStorage.setItem('authToken', data.token);
-        // You might want to perform further actions like redirecting the user or updating the UI
         localStorage.setItem('username', username); // Saving username
-        navigate('/chat'); // Use navigate
+        navigate('/chat');
       } else {
         console.log('Authentication failed');
-        // Handle authentication failure, display an error message, etc.
       }
     } catch (error) {
       console.error('Error during authentication:', error);
-      // Handle errors like network issues, server errors, etc.
     }
   };
 

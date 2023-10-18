@@ -15,7 +15,7 @@ function NoteFormComponent() {
     }
 
     // Load existing notes initially
-    // handleGetAllNotes();
+    handleGetAllNotes();
   }, []);
 
   const handleSubmit = async (e) => {

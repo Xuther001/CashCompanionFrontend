@@ -4,7 +4,7 @@
     border: 1px solid #ccc;
     padding: 20px;
     margin: 20px;
-    overflow: hidden; /* Prevent overflowing content */
+    overflow: hidden;
     background-color: skyblue;
   }
   
@@ -32,8 +32,8 @@
     border: 1px solid #ccc;
     width: 760px;
     padding: 10px;
-    max-height: 160px; /* Limit the maximum height of the investment list */
-    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+    max-height: 160px;
+    overflow-y: auto;
     margin-top: 20px;
     margin: 10px;
     background-color: lightblue;

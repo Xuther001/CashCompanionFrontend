@@ -9,7 +9,6 @@ function PortfolioComponent() {
     purchasePrice: 0,
   });
 
-  // Functions to handle user input and add new investments
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewInvestment({ ...newInvestment, [name]: value });
@@ -24,7 +23,6 @@ function PortfolioComponent() {
     });
   };
 
-  // Render the list of investments
   const investmentList = investments.map((investment, index) => (
     <div key={index}>
       <p>Stock Symbol: {investment.name} || Shares: {investment.shares} || Purchase Price: {investment.purchasePrice}</p>

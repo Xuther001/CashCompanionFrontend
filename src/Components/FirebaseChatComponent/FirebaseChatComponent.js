@@ -56,9 +56,22 @@ function FirebaseComponent() {
 
     try {
       const result = await signInWithPopup(auth, provider);
+      if (result) {
+        refreshChatMessages();
+      }
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const refreshChatMessages = () => {
+    const q = query(collection(db, "messages"), orderBy("timestamp"));
+    onSnapshot(q, (snapshot) => {
+      setMessages(snapshot.docs.map((doc) => ({
+        id: doc.id,
+        data: doc.data(),
+      })));
+    });
   };
 
   return (

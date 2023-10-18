@@ -34,7 +34,6 @@ const RegistrationPage = () => {
   const handleRegistration = async (event) => {
     event.preventDefault();
 
-    // Create an object to hold the registration data
     const registrationData = {
       firstName: firstName,
       lastName: lastName,
@@ -44,7 +43,6 @@ const RegistrationPage = () => {
     };
 
     try {
-      // Send the registration data to the backend for registration
       const response = await fetch('http://localhost:8080/api/v1/auth/register', {
         method: 'POST',
         headers: {
@@ -53,31 +51,27 @@ const RegistrationPage = () => {
         body: JSON.stringify(registrationData),
       });
 
-      // Check if the response is successful
       if (response.ok) {
-        setRegistrationStatus('success'); // Set registrationStatus to 'success' on success
+        setRegistrationStatus('success');
+
         // Redirect to the login page after successful registration
+        setTimeout(() => {
+          navigate('/chat');
+        }, 10000);
       } else {
-        setRegistrationStatus('failed'); // Set registrationStatus to 'failed' on failure
+        setRegistrationStatus('failed');
         console.log('Registration failed');
-        // Handle registration failure, display an error message, etc.
       }
     } catch (error) {
-      setRegistrationStatus('failed'); // Set registrationStatus to 'failed' on error
+      setRegistrationStatus('failed');
       console.error('Error during registration:', error);
-      // Handle errors like network issues, server errors, etc.
     }
-
-    setTimeout(() => {
-        navigate('/chat');
-      }, 10000);
   };
 
   return (
     <div className="registration-container">
       <h2 className="registration-container__heading">Register</h2>
       <form className="registration-form" onSubmit={handleRegistration}>
-        {/* Conditional rendering of registration status message */}
         {registrationStatus === 'success' && (
           <p className="registration-success-message">Registration Successful</p>
         )}
