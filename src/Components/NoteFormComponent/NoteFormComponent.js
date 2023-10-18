@@ -35,7 +35,6 @@ function NoteFormComponent() {
     try {
       await axios.delete(`http://localhost:8080/api/v1/notes/${noteid}`);
       console.log('Note removed successfully:', noteid);
-
       handleGetAllNotes();
     } catch (error) {
       console.error('Error removing note:', error);
@@ -44,8 +43,7 @@ function NoteFormComponent() {
 
   const handleGetAllNotes = async () => {
     try {
-      // const response = await axios.get(`http://localhost:8080/api/v1/notes/${userid}`);
-      const response = await axios.get(`http://localhost:8080/api/v1/notes`);
+      const response = await axios.get(`http://localhost:8080/api/v1/notes/${userid}`);
       console.log('All notes:', response.data);
       setNotes(response.data);
     } catch (error) {
