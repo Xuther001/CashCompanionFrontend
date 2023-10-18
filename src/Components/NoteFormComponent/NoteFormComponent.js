@@ -26,6 +26,7 @@ function NoteFormComponent() {
       console.log('Note added successfully:', response.data);
 
       setContent('');
+      handleGetAllNotes();
     } catch (error) {
       console.error('Error adding note:', error);
     }
@@ -81,10 +82,6 @@ function NoteFormComponent() {
           ))}
         </ul>
       </div>
-
-      <button onClick={handleGetAllNotes} style={{ marginLeft: '10px' }}>
-        Get All Notes
-      </button>
     </div>
   );
 }

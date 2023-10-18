@@ -1,7 +1,6 @@
 .news-container {
     width: 800px;
     height: 300px;
-    overflow: auto;
     border: 1px solid #ccc;
     padding: 20px;
     margin: 20px;
@@ -16,7 +15,7 @@
     border: 1px solid #ccc;
     width: 760px;
     padding: 10px;
-    max-height: 300px; /* Adjust the max height as needed */
+    max-height: 300px;
     overflow-y: auto;
     margin-top: 20px;
     margin: 10px;
