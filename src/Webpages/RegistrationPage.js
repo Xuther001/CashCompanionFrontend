@@ -3,19 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import './RegistrationPage.css';
 
 const RegistrationPage = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [registrationStatus, setRegistrationStatus] = useState(null);
   const navigate = useNavigate();
 
-  const handleFirstNameChange = (event) => {
+  const handleFirstnameChange = (event) => {
     setFirstName(event.target.value);
   };
 
-  const handleLastNameChange = (event) => {
+  const handleLastnameChange = (event) => {
     setLastName(event.target.value);
   };
 
@@ -35,8 +35,8 @@ const RegistrationPage = () => {
     event.preventDefault();
 
     const registrationData = {
-      firstName: firstName,
-      lastName: lastName,
+      firstname: firstname,
+      lastname: lastname,
       username: username,
       password: password,
       email: email,
@@ -89,8 +89,8 @@ const RegistrationPage = () => {
           <input
             type="text"
             id="firstName"
-            value={firstName}
-            onChange={handleFirstNameChange}
+            value={firstname}
+            onChange={handleFirstnameChange}
             className="registration-form__input"
           />
         </div>
@@ -100,9 +100,9 @@ const RegistrationPage = () => {
           </label>
           <input
             type="text"
-            id="lastName"
-            value={lastName}
-            onChange={handleLastNameChange}
+            id="lastname"
+            value={lastname}
+            onChange={handleLastnameChange}
             className="registration-form__input"
           />
         </div>

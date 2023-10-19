@@ -1,4 +1,4 @@
-/* Your CSS file (e.g., FirebaseChatComponent.css) */
+/* FirebaseChatComponent.css) */
 
 /* Firebase chat box styling */
 .FirebaseComponent {
@@ -19,8 +19,8 @@
   }
   
   .message-container {
-    max-height: 310px; /* Adjust the maximum height for the message container */
-    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+    max-height: 310px;
+    overflow-y: auto;
   }
   
   /* Google Account Icon */
