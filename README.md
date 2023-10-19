@@ -7,6 +7,9 @@ create notes for themselves. ChatGPT is also integrated to assist users for any 
 - This repository is the frontend.
 - The backend can be found here: https://github.com/Xuther001/CashCompanionBackend
 
+- In Order for ChatGPT to work you must change constant API_KEY to your own ChatGPT key in:
+  `src/Components/ChatGPTComponent/ChatGPTComponent.js`
+
 Demo of the web app: https://www.youtube.com/watch?v=Rp8jBmOCXek
 
 # Getting Started with Create React App
