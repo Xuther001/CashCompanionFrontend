@@ -6,12 +6,18 @@ function PortfolioComponent() {
   const [newInvestment, setNewInvestment] = useState({
     name: '',
     shares: 0,
-    purchasePrice: 0,
+    purchasePrice: '$',
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewInvestment({ ...newInvestment, [name]: value });
+    if (name === 'purchasePrice') {
+      // Remove "$" sign from the input value
+      const numericValue = value.replace('$', '');
+      setNewInvestment({ ...newInvestment, [name]: `$${numericValue}` });
+    } else {
+      setNewInvestment({ ...newInvestment, [name]: value });
+    }
   };
 
   const addInvestment = () => {
@@ -19,13 +25,15 @@ function PortfolioComponent() {
     setNewInvestment({
       name: '',
       shares: 0,
-      purchasePrice: 0,
+      purchasePrice: "$",
     });
   };
 
   const investmentList = investments.map((investment, index) => (
     <div key={index}>
-      <p>Stock Symbol: {investment.name} || Shares: {investment.shares} || Purchase Price: {investment.purchasePrice}</p>
+      <p>
+        Stock Symbol: {investment.name} || Shares: {investment.shares} || Purchase Price: ${parseFloat(investment.purchasePrice.replace('$', '')).toLocaleString('en-US')}
+      </p>
     </div>
   ));
 
@@ -55,7 +63,7 @@ function PortfolioComponent() {
         <label className="add-investment-label" htmlFor="purchasePrice">Purchase Price:</label>
         <input
           className="add-investment-input"
-          type="number"
+          type="string"
           name="purchasePrice"
           value={newInvestment.purchasePrice}
           onChange={handleInputChange}
