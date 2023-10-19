@@ -12,7 +12,6 @@ function PortfolioComponent() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === 'purchasePrice') {
-      // Remove "$" sign from the input value
       const numericValue = value.replace('$', '');
       setNewInvestment({ ...newInvestment, [name]: `$${numericValue}` });
     } else {
@@ -21,18 +20,23 @@ function PortfolioComponent() {
   };
 
   const addInvestment = async () => {
-    // Fetch the current stock price from the API
+    if (!newInvestment.name || newInvestment.shares <= 0 || !newInvestment.purchasePrice) {
+      alert("Please fill out all required fields.");
+      return;
+    } 
     try {
       const response = await fetch(`https://finnhub.io/api/v1/quote?symbol=${newInvestment.name}&token=ckifd3hr01qi7b5gm7dgckifd3hr01qi7b5gm7e0`);
       const data = await response.json();
       
-      // Calculate the net loss or gain
       const currentPrice = data.c;
+      if (currentPrice === 0) {
+        alert("Double check Stock Symbol. It may not be valid.");
+        return;
+      }
       const purchasePrice = parseFloat(newInvestment.purchasePrice.replace('$', ''));
       const shares = parseFloat(newInvestment.shares);
       const netGainOrLoss = (currentPrice - purchasePrice) * shares;
 
-      // Update investments state with the new investment and net gain/loss
       setInvestments([...investments, { ...newInvestment, currentPrice, netGainOrLoss }]);
       setNewInvestment({
         name: '',
