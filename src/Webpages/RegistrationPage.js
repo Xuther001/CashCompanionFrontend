@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RegistrationPage.css';
 
@@ -10,6 +10,22 @@ const RegistrationPage = () => {
   const [email, setEmail] = useState('');
   const [registrationStatus, setRegistrationStatus] = useState(null);
   const navigate = useNavigate();
+  const [countdown, setCountdown] = useState(10);
+
+  useEffect(() => {
+    let timer;
+    if (registrationStatus === 'success' && countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown(prevCountdown => prevCountdown - 1);
+      }, 1000);
+    } else if (countdown === 0) {
+      navigate('/');
+    }
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [registrationStatus, countdown, navigate]);
 
   const handleFirstnameChange = (event) => {
     setFirstName(event.target.value);
@@ -54,9 +70,8 @@ const RegistrationPage = () => {
       if (response.ok) {
         setRegistrationStatus('success');
 
-        // Redirect to the login page after successful registration
         setTimeout(() => {
-          navigate('/chat');
+          navigate('/');
         }, 10000);
       } else {
         setRegistrationStatus('failed');
@@ -76,7 +91,7 @@ const RegistrationPage = () => {
           <p className="registration-success-message">Registration Successful</p>
         )}
         {registrationStatus === 'success' && (
-          <p className="registration-success-message">Redirecting in 10 seconds...</p>
+          <p className="registration-success-message">Redirecting in {countdown} seconds...</p>
         )}
         {registrationStatus === 'failed' && (
           <p className="registration-failed-message">Registration Failed</p>

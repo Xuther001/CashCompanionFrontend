@@ -103,7 +103,7 @@ function PortfolioComponent() {
         </div>
       </div>
       <div className="investment-list-container">
-        <h3>Your Investments:</h3>
+        <h3>Your Portfolio:</h3>
         {investmentList}
       </div>
     </div>
