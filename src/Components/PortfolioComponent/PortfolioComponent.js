@@ -54,7 +54,7 @@ function PortfolioComponent() {
         Stock Symbol: {investment.name} <br />
         Shares: {investment.shares} <br />
         Purchase Price: {investment.purchasePrice} <br />
-        Current Price: {investment.currentPrice} <br />
+        Current Price: ${investment.currentPrice} <br />
         Net Gain/Loss: ${investment.netGainOrLoss.toFixed(2)}
       </p>
     </div>

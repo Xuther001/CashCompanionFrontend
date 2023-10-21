@@ -8,15 +8,14 @@ function NoteFormComponent() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    // Retrieve the userId from local storage
     const storedUserId = localStorage.getItem('username');
     if (storedUserId) {
       setUserId(storedUserId);
     }
 
-    // Load existing notes initially
     handleGetAllNotes();
-  }, []);
+
+  },);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +44,7 @@ function NoteFormComponent() {
   const handleGetAllNotes = async () => {
     try {
       const response = await axios.get(`http://localhost:8080/api/v1/notes/${userid}`);
-      console.log('All notes:', response.data);
+      // console.log('All notes:', response.data);s
       setNotes(response.data);
     } catch (error) {
       console.error('Error retrieving notes:', error);
